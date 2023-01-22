@@ -1,0 +1,225 @@
+// add customs styles and general overrides here
+// due to the cascading nature of css, if you try to override theme css variables in this file, those changes will not apply. Instead, override css variables in the `override.sass` file
+// we recommend not editing this file directly. Instead, create an `assets/sass/_custom.sass` file at the root level of your site.
+// if you edit this file directly, you will have to resolve git conflicts when and if you decide to pull changes we make on the theme
+
+html
+  --color-mode: "dark"
+  --light: #fff
+  --dark:  black // rgb(28,28,30)
+  --haze: #f2f5f7
+  --bubble: rgb(36,36,38)
+  --accent: var(--haze)
+  --bg: var(--light)
+  --code-bg: var(--accent)
+  --overlay: var(--light)
+  --text: #111
+  --font: 'Metropolis', sans-serif
+  --border-color: #eee
+  --inline-color: darkgoldenrod
+  --theme: rgb(52,199,89)
+  --ease: ease
+  --search-border-color: transparent
+
+  @mixin darkmode
+    --color-mode: "dark"
+    --theme: goldenrod //rgb(48,209,88)
+    --inline-color: goldenrod
+    --bg: var(--dark)
+    --text: #eee
+    --accent: var(--bubble)
+    --overlay: var(--bubble)
+    --border-color: transparent
+    --search-bg: var(--accent)
+    --search-border-color: var(--accent)
+    --bubble: #0b0b0b //rgb(36,36,38)
+    *
+      box-shadow: none !important
+
+  &[data-mode="dark"]
+    @include darkmode
+    .color
+      &_choice
+        &::after
+          background-image: var(--sunIcon)
+          background-color: white
+    // custom attributes & Overrides.
+    .button
+       background-color: #ECD540 // Sandstorm
+       color: black
+    // Figure out how to add secondary button color (prob white) for better contrast
+    .h2
+       color: yellow
+
+    .code.noClass
+       color: "#fdc62e"
+
+    a.group
+       color: gold
+
+    a.toc_link
+       color: darkgoldenrod
+
+    a
+      color: white
+
+    .tip
+      color: black
+      border-left: 0.2rem solid goldenrod
+      a
+       //color: white
+       background-color: black
+      &
+       color: black
+       background-color: #FDDE48
+      &::before
+      --theme goldenrod
+        color: black
+        background-color: goldenrod
+
+      &_warning::before
+        //background-image: var(--infoIcon)
+        background-color: red
+      --inline-color: red
+      &_warning
+        background-color: #881C1C
+        border-left: 0.2rem solid red
+        color: white
+
+    .article
+      &_meta
+        background: var(--bubble)
+
+
+    .post_date
+       color: gold //inherit
+
+    .post
+       h1
+         color: #FFFFF0 // Ivory
+       h2
+          color: #FAFA33 // Lemon Yellow
+       h3
+         color: #FFC000 // Golden Yellow
+       h4
+         color: #DAA520 // Goldenrod
+       h5
+         color: darkgoldenrod // Dark Orange
+       h6
+         color: brown
+
+    .toc_link
+      color: gold //inherit
+
+    code
+       &.noClass
+        color: #696969 // Dark Gray
+
+
+  &.dark:not([data-mode="light"])
+    @media (prefers-color-scheme: dark)
+      @include darkmode
+
+  @mixin lightmode
+    --color-mode: "light"
+    --theme: rgb(48,209,88)
+    --theme: goldenrod //rgb(48,209,88)
+    --inline-color: goldenrod
+    --bg: var(--light)
+    --text: black //#eee
+    --accent: var(--bubble)
+    --overlay: var(--bubble)
+    --border-color: transparent
+    --search-bg: var(--accent)
+    --search-border-color: var(--accent)
+    --bubble: #F5F5F5
+    *
+      box-shadow: none !important
+
+  &[data-mode="light"]
+    @include lightmode
+    .color
+      &_choice
+        &::after
+          background-image: var(--moonIcon)
+          background-color: black
+
+    .button
+       background-color: #ECD540 // Sandstorm
+       color: black
+    // Figure out how to add secondary button color (prob black) for better contrast
+    .h2
+       color: yellow
+
+    .code.noClass
+       color: "#fdc62e"
+
+    a.nav-link
+       color: black
+
+    a.group
+       color: goldenrod
+
+    a.toc_link
+       color: darkgoldenrod
+
+    a
+      color: black
+
+    .tip
+      color: black
+      border-left: 0.2rem solid goldenrod
+      a
+       //color: white
+       background-color: black
+      &
+       color: black
+       background-color: #FDDE48
+      &::before
+      --theme goldenrod
+        color: black
+        background-color: goldenrod
+
+      &_warning::before
+        //background-image: var(--infoIcon)
+        background-color: red
+      --inline-color: red
+      &_warning
+        background-color: #881C1C
+        border-left: 0.2rem solid red
+        color: white
+
+    .article
+      &_meta
+        background: var(--bubble)
+
+
+    .post_date
+       color: darkgoldenrod //inherit
+
+    .post
+       h1
+         color: #FFFFF0 // Ivory
+       h2
+          color: #FAFA33 // Lemon Yellow
+       h3
+         color: #FFC000 // Golden Yellow
+       h4
+         color: #DAA520 // Goldenrod
+       h5
+         color: darkgoldenrod // Dark Orange
+       h6
+         color: brown
+
+    .toc_link
+      color: gold //inherit
+
+    code
+       &.noClass
+        color: #696969 // Dark Gray
+
+
+  &.light:not([data-mode="dark"])
+    @media (prefers-color-scheme: light)
+      @include lightmode
+

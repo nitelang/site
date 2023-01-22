@@ -1,0 +1,4 @@
+github.com/onweru/compose v0.0.0-20230124183858-9412f10b0de5 h1:5aakRf8ExXEffuyhraIMQ/dbPWeIOdD5s2rrqtzaWIc=
+github.com/onweru/compose v0.0.0-20230124183858-9412f10b0de5/go.mod h1:tf1kQIBUcwJ/3mRFU5eiMrMvsDScVTK2IEFsZE3hZOc=
+github.com/spf13/hyde v1.1.0 h1:ZKOakmybNrsaUQCZsf/XwwGIp6NHjUuU3klBgVuoees=
+github.com/spf13/hyde v1.1.0/go.mod h1:CSmLWCbXXInaA5zAkwAQ0EbwpR7Pe74eSmDxdGspoCY=

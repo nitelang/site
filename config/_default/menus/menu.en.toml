@@ -1,0 +1,26 @@
+#  menu items
+
+[[main]]
+  name = "Docs"
+  weight = 1
+  url = "docs/"
+
+[[main]]
+  name = "Tuts"
+  weight = 2
+  url = "tuts/"
+
+[[main]]
+  name = "Blog"
+  weight = 4
+  url = "blog/"
+
+[[main]]
+  name = "Play"
+  weight = 5
+  url = "https://play.nite-lang.org"
+
+[[main]]
+  name = "Pkgs"
+  weight = 6
+  url = "https://nite.rocks"
